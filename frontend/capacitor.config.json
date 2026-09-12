@@ -1,0 +1,8 @@
+{
+  "appId": "cr.mcnury.app",
+  "appName": "Mac Nury",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}

@@ -1,0 +1,143 @@
+export const categories = [
+  { id: 'all', label: 'Todo', emoji: '🔥' },
+  { id: 'hamburguesas', label: 'Hamburguesas', emoji: '🍔' },
+  { id: 'antojitos', label: 'Antojitos', emoji: '🍟' },
+  { id: 'especialidades', label: 'Especialidades', emoji: '🍗' },
+  { id: 'batidos', label: 'Batidos', emoji: '🥤' },
+]
+
+const meatChoice = {
+  name: 'Proteína',
+  required: true,
+  max: 1,
+  choices: [
+    { name: 'Torta', price: 0 },
+    { name: 'Carne desmechada', price: 0 },
+    { name: 'Pollo', price: 0 },
+  ],
+}
+
+const extras = {
+  name: 'Extras',
+  required: false,
+  max: 3,
+  choices: [
+    { name: 'Queso extra', price: 300 },
+    { name: 'Carne extra', price: 1000 },
+    { name: 'Papas extra', price: 1000 },
+  ],
+}
+
+export const menu = [
+  {
+    id: 1,
+    name: 'Hamburguesa doble + papas',
+    description: 'Escogé dos tipos de carne y acompañá con papas.',
+    price: 4000,
+    category: 'hamburguesas',
+    emoji: '🍔',
+    color: 'amber',
+    popular: true,
+    options: [{ ...meatChoice, name: 'Elegí dos carnes', max: 2 }, extras],
+  },
+  {
+    id: 2,
+    name: 'Hamburguesa + papas',
+    description: 'Hamburguesa preparada al momento con papas crujientes.',
+    price: 3000,
+    category: 'hamburguesas',
+    emoji: '🍔',
+    color: 'orange',
+    options: [meatChoice, extras],
+  },
+  {
+    id: 3,
+    name: 'Hamburguesa clásica',
+    description: 'La clásica de la casa, sencilla y llena de sabor.',
+    price: 2000,
+    category: 'hamburguesas',
+    emoji: '🍔',
+    color: 'red',
+    options: [meatChoice, extras],
+  },
+  { id: 4, name: 'Papas fritas grandes', description: 'Porción grande, doradas y crujientes.', price: 2000, category: 'antojitos', emoji: '🍟', color: 'yellow' },
+  { id: 5, name: 'Papa fiesta', description: 'Papas cargadas al estilo Mac Nury.', price: 3500, category: 'antojitos', emoji: '🍟', color: 'pink', popular: true },
+  { id: 6, name: 'Salchipapa', description: 'Papas con salchicha y salsas de la casa.', price: 2000, category: 'antojitos', emoji: '🌭', color: 'orange' },
+  { id: 7, name: 'Nachos', description: 'Nachos cargados, queso y sabor para compartir.', price: 4000, category: 'antojitos', emoji: '🌮', color: 'red' },
+  {
+    id: 8,
+    name: 'Papa nachos',
+    description: 'Papas con nachos y proteína a elección.',
+    price: 4000,
+    category: 'antojitos',
+    emoji: '🍟',
+    color: 'amber',
+    options: [{ ...meatChoice, choices: meatChoice.choices.slice(1) }],
+  },
+  { id: 9, name: 'Hot dog', description: 'Hot dog preparado al momento con salsas.', price: 2000, category: 'antojitos', emoji: '🌭', color: 'yellow' },
+  { id: 10, name: 'Taco sencillo', description: 'Taco crujiente con relleno de la casa.', price: 1000, category: 'antojitos', emoji: '🌮', color: 'orange' },
+  { id: 11, name: 'Taco doble', description: 'Dos tacos para matar el antojo.', price: 1500, category: 'antojitos', emoji: '🌮', color: 'red' },
+  { id: 12, name: 'Quesadilla + ensalada', description: 'Quesadilla dorada acompañada de ensalada.', price: 3500, category: 'antojitos', emoji: '🫓', color: 'amber' },
+  {
+    id: 13,
+    name: 'Burrito completo',
+    description: 'Con ensalada y papas. Elegí carne, pollo o mixto.',
+    price: 3500,
+    category: 'antojitos',
+    emoji: '🌯',
+    color: 'green',
+    popular: true,
+    options: [{ ...meatChoice, choices: [...meatChoice.choices.slice(1), { name: 'Mixto', price: 0 }] }],
+  },
+  { id: 14, name: 'Empanada arreglada', description: 'Empanada preparada con todos los arreglos.', price: 1500, category: 'antojitos', emoji: '🥟', color: 'yellow' },
+  {
+    id: 15,
+    name: 'Alitas + papas + ensalada',
+    description: 'Alitas bañadas en tu salsa favorita.',
+    price: 4000,
+    category: 'especialidades',
+    emoji: '🍗',
+    color: 'red',
+    popular: true,
+    options: [{ name: 'Salsa', required: true, max: 1, choices: [{ name: 'BBQ', price: 0 }, { name: 'Mostaza miel', price: 0 }] }],
+  },
+  { id: 16, name: 'Tender de pollo', description: 'Con papas fritas y ensalada.', price: 4000, category: 'especialidades', emoji: '🍗', color: 'orange' },
+  { id: 17, name: 'Tender de pescado', description: 'Con papas fritas y ensalada.', price: 4000, category: 'especialidades', emoji: '🐟', color: 'blue' },
+  {
+    id: 18,
+    name: 'Batido en leche',
+    description: 'Cremoso, fresco y preparado al momento.',
+    price: 1500,
+    category: 'batidos',
+    emoji: '🥤',
+    color: 'pink',
+    options: [{ name: 'Sabor', required: true, max: 1, choices: ['Piña', 'Fresa', 'Mora', 'Sandía', 'Maracuyá'].map((name) => ({ name, price: 0 })) }],
+  },
+  {
+    id: 19,
+    name: 'Batido en agua',
+    description: 'Refrescante y lleno de fruta.',
+    price: 1200,
+    category: 'batidos',
+    emoji: '🥤',
+    color: 'green',
+    options: [{ name: 'Sabor', required: true, max: 1, choices: ['Piña con hierbabuena', 'Piña', 'Fresa', 'Mora', 'Sandía', 'Maracuyá'].map((name) => ({ name, price: 0 })) }],
+  },
+]
+
+export const initialInventory = [
+  { id: 1, name: 'Pan de hamburguesa', unit: 'unidades', stock: 18, minimum: 8, cost: 250 },
+  { id: 2, name: 'Tortas de carne', unit: 'unidades', stock: 14, minimum: 8, cost: 425 },
+  { id: 3, name: 'Pollo preparado', unit: 'porciones', stock: 11, minimum: 6, cost: 600 },
+  { id: 4, name: 'Carne desmechada', unit: 'porciones', stock: 6, minimum: 6, cost: 700 },
+  { id: 5, name: 'Papas', unit: 'porciones', stock: 22, minimum: 10, cost: 350 },
+  { id: 6, name: 'Queso', unit: 'tajadas', stock: 7, minimum: 10, cost: 180 },
+  { id: 7, name: 'Fruta para batidos', unit: 'porciones', stock: 16, minimum: 8, cost: 300 },
+  { id: 8, name: 'Empaques', unit: 'unidades', stock: 24, minimum: 15, cost: 125 },
+]
+
+export const initialOrders = [
+  { id: 1042, customer: 'Daniela', items: '2 Hamburguesas + papas, 1 Batido', total: 7500, status: 'new', payment: 'SINPE al recoger', time: '6:20 p. m.', source: 'App' },
+  { id: 1041, customer: 'José', items: '1 Papa fiesta, 1 Taco doble', total: 5000, status: 'preparing', payment: 'Efectivo', time: '6:05 p. m.', source: 'WhatsApp' },
+  { id: 1040, customer: 'María', items: '1 Alitas BBQ, 1 Batido en agua', total: 5200, status: 'ready', payment: 'Tarjeta · Pagado', time: '5:50 p. m.', source: 'App' },
+]

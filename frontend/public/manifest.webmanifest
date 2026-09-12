@@ -1,0 +1,12 @@
+{
+  "name": "Mac Nury Comidas Rápidas",
+  "short_name": "Mac Nury",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8ee",
+  "theme_color": "#17110f",
+  "lang": "es-CR",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

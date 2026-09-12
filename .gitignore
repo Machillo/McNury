@@ -1,0 +1,27 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Mobile builds
+frontend/android/.gradle/
+frontend/android/app/build/
+frontend/ios/App/Pods/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
